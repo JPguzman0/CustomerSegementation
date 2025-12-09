@@ -18,7 +18,7 @@ st.markdown(
     """,
     unsafe_allow_html=True
 )
-df = pd.read_csv(r'C:\Users\jasph\Downloads\Combined_Sales_2025.csv')
+df = pd.read_csv("Combined_Sales_2025.csv")
 df['Customer Type'] = df['Customer Type'].fillna('Buyer (Jewelry)').replace('', 'Buyer (Jewelry)')
 df['Date'] = pd.to_datetime(df['Date'])
 df['Grade'] = df['Grade'].fillna('Unknown').astype(str)
@@ -608,4 +608,5 @@ with chart_col9:
     st.plotly_chart(forecast_fig, use_container_width=True)
 
 with chart_col10:
+
     st.plotly_chart(clv_fig, use_container_width=True)
